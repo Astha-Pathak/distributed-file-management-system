@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package filemanager;
+
+service FileService {
+  rpc UploadFile(FileChunk) returns (UploadStatus);
+}
+
+message FileChunk {
+  string filename = 1;
+  bytes content = 2;
+}
+
+message UploadStatus {
+  string message = 1;
+}
